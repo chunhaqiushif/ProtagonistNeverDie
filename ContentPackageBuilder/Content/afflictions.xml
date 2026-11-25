@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <!-- 忽略目标 -->
+    <Affliction identifier="custom_IgnoredByEnemyAI" type="talentbuff" isbuff="true"
+      hideiconafterdelay="false" limbspecific="false" maxstrength="1" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Description textidentifier="afflictiondescription.custom_IgnoredByEnemyAI" />
+      <Effect minstrength="0" maxstrength="1" strengthchange="-0.1">
+        <AbilityFlag flagtype="IgnoredByEnemyAI" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="6,4" sheetelementsize="128,128" />
+    </Affliction>
+    <!-- 搬运 -->
+    <Affliction identifier="custom_emergencyresponse" type="talentbuff" isbuff="true"
+      hideiconafterdelay="true" limbspecific="false" maxstrength="1" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Description textidentifier="afflictiondescription.custom_emergencyresponse" />
+      <Effect minstrength="0" maxstrength="1" strengthchange="0">
+        <AbilityFlag flagtype="MoveNormallyWhileDragging" />
+      </Effect>
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="10,10,115,123" origin="0,0" />
+    </Affliction>
+    <!-- 死神税 -->
+    <Affliction identifier="custom_reaperstax" type="respawnpenalty" limbspecific="false"
+      indicatorlimb="Torso" activationthreshold="0" treatmentthreshold="1000" maxstrength="100"
+      healcostmultiplier="10">
+      <Description textidentifier="afflictiondescription.custom_reaperstax" />
+      <Effect minstrength="0" maxstrength="100" minvitalitydecrease="20" maxvitalitydecrease="60"
+        minscreendistort="0" maxscreendistort="0" strengthchange="0" minskillmultiplier="0.9"
+        maxskillmultiplier="0.5" minspeedmultiplier="0.8" maxspeedmultiplier="0.8"></Effect>
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128"
+        color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 奇迹进行中 -->
+    <Affliction identifier="custom_miracleworker" type="talentbuff" isbuff="true"
+      hideiconafterdelay="true" limbspecific="false" maxstrength="1" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0">
+        <AbilityFlag flagtype="CanNotDieToAfflictions" />
+      </Effect>
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="135,10,115,123" origin="0,0" />
+    </Affliction>
+    <!-- 压力稳定 -->
+    <Affliction identifier="custom_pressurestabilized" type="talentbuff" isbuff="true"
+      hideiconafterdelay="false" limbspecific="false" maxstrength="100" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249" MedicalSkillGain="0.0002">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-50">
+        <AbilityFlag flagtype="ImmuneToPressure" />
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+          <Affliction identifier="organdamage" amount="5" />
+        </StatusEffect>
+        <StatusEffect target="Character" multiplyafflictionsbymaxvitality="true">
+          <Affliction identifier="explosiondamage" amount="2" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,896,128,128"
+        color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- 复生buff -->
+    <Affliction identifier="custom_respawnblessing" type="talentbuff" isbuff="true"
+      hideiconafterdelay="false" limbspecific="false" maxstrength="15" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Description textidentifier="afflictiondescription.custom_respawnblessing" />
+      <!-- 自然衰减，期间由代码持续治疗病症 -->
+      <Effect minstrength="0" maxstrength="15" strengthchange="-1" />
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="260,10,115,123" origin="0,0" />
+    </Affliction>
+    <!-- 最大生命提高 -->
+    <Affliction identifier="custom_maxheathbuff" type="talentbuff"
+      isbuff="true" hideiconafterdelay="true" limbspecific="false" maxstrength="1"
+      treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0">
+        <StatValue stattype="MaximumHealthMultiplier" minvalue="0.25" maxvalue="0.25" />
+      </Effect>
+      <Icon texture="%ModDir%/Content/Texture/buff_icon.png" sourcerect="125,5,115,123" origin="0,0" />
+    </Affliction>
+
+    <!-- 芯片状态图标（仅用于显示状态） -->
+    <!-- 复生芯片 · 就绪 -->
+    <Affliction identifier="custom_respawnready" type="talentbuff" isbuff="true"
+      hideiconafterdelay="true" limbspecific="false" maxstrength="1" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" />
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="260,10,115,123" origin="0,0" />
+    </Affliction>
+    <!-- 复生芯片 · 冷却 -->
+    <Affliction identifier="custom_respawncooldown" type="talentbuff" isbuff="true"
+      hideiconafterdelay="false" limbspecific="false" maxstrength="100" treatmentthreshold="1000"
+      iconcolors="190,160,80;205,125,60;215,85,50;205,40,40">
+      <Effect minstrength="0" maxstrength="100" strengthchange="0" />
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="385,10,102,102" origin="0,0" />
+    </Affliction>
+    <!-- 传送芯片 · 就绪 -->
+    <Affliction identifier="custom_teleportready" type="talentbuff" isbuff="true"
+      hideiconafterdelay="true" limbspecific="false" maxstrength="1" treatmentthreshold="1000"
+      iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" />
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="10,143,115,123" origin="0,0" />
+    </Affliction>
+    <!-- 传送芯片 · 冷却 -->
+    <Affliction identifier="custom_teleportcooldown" type="talentbuff" isbuff="true"
+      hideiconafterdelay="false" limbspecific="false" maxstrength="100" treatmentthreshold="1000"
+      iconcolors="190,160,80;205,125,60;215,85,50;205,40,40">
+      <Effect minstrength="0" maxstrength="100" strengthchange="0" />
+      <Icon texture="%ModDir%/Content/Texture/buffs.png" sourcerect="135,143,102,102" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

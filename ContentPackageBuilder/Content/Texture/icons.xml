@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $TexturePacker:SmartUpdate:ee594c1d4f17e0e6c67434742cf0b35f$ -->
+<x2d version="1.0">
+    <texture n="icons" path="res/graphics/icons.png">
+        <s n="buff_chip" texture="%ModDir%/Content/Texture/icons.png" sourcerect="10,10,56,56" />
+        <s n="buff_chip_slot" texture="%ModDir%/Content/Texture/icons.png" sourcerect="76,10,56,56" />
+        <s n="healthscan_chip" texture="%ModDir%/Content/Texture/icons.png" sourcerect="142,10,55,39" />
+        <s n="healthscan_chip_slot" texture="%ModDir%/Content/Texture/icons.png" sourcerect="207,10,58,50" />
+        <s n="immortal_chip" texture="%ModDir%/Content/Texture/icons.png" sourcerect="275,10,55,39" />
+        <s n="immortal_chip_slot" texture="%ModDir%/Content/Texture/icons.png" sourcerect="340,10,58,50" />
+        <s n="respawn_chip" texture="%ModDir%/Content/Texture/icons.png" sourcerect="408,10,55,39" />
+        <s n="respawn_chip_slot" texture="%ModDir%/Content/Texture/icons.png" sourcerect="10,76,58,50" />
+        <s n="respawn_point" texture="%ModDir%/Content/Texture/icons.png" sourcerect="78,76,204,218" />
+        <s n="teleport_chip" texture="%ModDir%/Content/Texture/icons.png" sourcerect="292,76,55,39" />
+        <s n="teleport_chip_slot" texture="%ModDir%/Content/Texture/icons.png" sourcerect="357,76,56,50" />
+    </texture>
+</x2d>

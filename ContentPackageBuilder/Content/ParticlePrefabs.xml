@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    传送特效粒子（素材来自 [V+]潜艇传送器 / Submarine Teleporter）
+    prefab 名改成 protagonist_teleporter，避免和原 mod 的 teleporter 重名冲突
+-->
+<prefabs>
+  <protagonist_teleporter LifeTime="0.8" LifeTimeMin="0" StartDelayMin="0" StartDelayMax="0" AngularVelocityMin="0" AngularVelocityMax="0" StartRotationMin="0" StartRotationMax="0" RotateToDirection="False" Drag="0" WaterDrag="0" VelocityChange="0,-0.1" VelocityChangeWater="0,-0.1" CanEnterSubs="True" CollisionRadius="1" InvariantCollisionSize="False" UseCollision="False" DeleteOnCollision="False" Friction="0.5" Restitution="0.5" StartSizeMin="0.8,0.8" StartSizeMax="0.8,0.8" SizeChangeMin="0,0" SizeChangeMax="0,0" GrowTime="0.05" StartColor="255,255,255,255" MiddleColor="255,255,255,255" EndColor="255,255,255,0" UseMiddleColor="False" DrawTarget="Both" DrawOnTop="True" DrawAlways="False" BlendState="Additive" Priority="5" AnimDuration="0.8" LoopAnim="True">
+    <animatedsprite texture="%ModDir%/Content/Texture/Particle.png" sourcerect="0,0,1645,510" columns="8" rows="1" origin="0.5,0.5" />
+  </protagonist_teleporter>
+</prefabs>

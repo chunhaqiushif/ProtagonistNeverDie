@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- 异星遗物插槽耳机 -->
+    <Item name="" identifier="artifact_slot_headset" nameidentifier="artifact_slot_headset"
+      descriptionidentifier="artifact_slot_headset" scale="0.5" category="Equipment,Medical"
+      tags="smallitem,mobileradio,artifact_slot_headset" allowasextracargo="true" description=""
+      cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="false">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="autoinjectorheadset" amount="1" />
+        <RequiredItem identifier="dementonite" amount="1" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Price baseprice="2000">
+        <Price storeidentifier="merchantoutpost" multiplier="1.0" minavailable="1" maxavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="1" maxavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.0" minavailable="1" maxavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.0" minavailable="1" maxavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.0" minavailable="1" maxavailable="1" />
+      </Price>
+      <PreferredContainer primary="medcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab"
+        amount="1" spawnprobability="0.05" />
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="113,264,58,45"
+        origin="0.5,0.5" />
+      <Sprite name="Headset" texture="Content/Items/JobGear/TalentGear.png" depth="0.6"
+        sourcerect="255,305,72,60" origin="0.35,0.5" />
+      <Body width="80" height="45" density="15" waterdragcoefficient="10" />
+      <Wearable limbtype="Head" slots="Any,Headset" msg="ItemMsgPickUpSelect">
+        <sprite name="Headset Wearable" texture="Content/Items/JobGear/TalentGear.png"
+          sourcerect="255,305,72,58" limb="Head" hidelimb="false" inheritlimbdepth="true"
+          inheritscale="true" ignorelimbscale="true" scale="0.7" hideotherwearables="false"
+          origin="0.5,0.5" />
+        <SkillModifier skillidentifier="medical" skillvalue="20" />
+        <SkillModifier skillidentifier="electrical" skillvalue="5" />
+        <SkillModifier skillidentifier="mechanical" skillvalue="5" />
+      </Wearable>
+      <WifiComponent range="35000.0" LinkToChat="true" MinChatMessageInterval="0.0" />
+      <ItemContainer capacity="0" containedstateindicatorstyle="syringe"
+        containedstateindicatorslot="4" autoinject="true">
+        <SlotIcon slotindex="0" texture="%ModDir%/Content/Texture/icons.png" sourcerect="340,10,58,50"
+          origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="immortal_chip" />
+        </SubContainer>
+
+        <SlotIcon slotindex="1" texture="%ModDir%/Content/Texture/icons.png" sourcerect="10,76,58,50"
+          origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="respawn_chip" />
+        </SubContainer>
+
+        <SlotIcon slotindex="2" texture="%ModDir%/Content/Texture/icons.png" sourcerect="357,76,56,50"
+          origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="teleport_chip" />
+        </SubContainer>
+
+        <SlotIcon slotindex="3" texture="%ModDir%/Content/Texture/icons.png" sourcerect="207,10,58,50"
+          origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="buff_headset_chips" />
+        </SubContainer>
+
+        <SlotIcon slotindex="4" texture="Content/UI/StatusMonitorUI.png" sourcerect="384,448,64,64"
+          origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="chem,syringe" />
+        </SubContainer>
+
+        <SlotIcon slotindex="5" texture="%ModDir%/Content/Texture/icons.png" sourcerect="207,10,58,50"
+          origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="buff_headset_chips" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- 传送特效：由 Lua 调用 ApplyStatusEffects(OnUse) 触发，转给 Events.xml 里的 protagonist_teleportfx 事件播放 -->
+      <ItemComponent>
+        <StatusEffect type="OnUse" target="This,Character" EventTargetTag="protagonist_tp"
+          stackable="false">
+          <TriggerEvent identifier="protagonist_teleportfx" />
+        </StatusEffect>
+        <!-- 复生芯片的除颤仪音效：走 OnSecondaryUse，避免和上面的传送特效同时触发 -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character"
+          EventTargetTag="protagonist_defib"
+          stackable="false">
+          <TriggerEvent identifier="protagonist_defib" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+
+    <!-- 生命芯片：装进耳机的「增益」槽，提升最大生命值 -->
+    <Item name="" identifier="maxhealth_chip" nameidentifier="maxhealth_chip"
+      descriptionidentifier="maxhealth_chip" scale="0.35" category="Misc"
+      tags="smallitem,artifact_slot_headset,buff_headset_chips"
+      cargocontaineridentifier="metalcrate"
+      impactsoundtag="impact_metal_light">
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false">
+        <RequiredItem identifier="healthscanner" amount="1" />
+        <RequiredItem identifier="dementonite" amount="1" />
+        <RequiredItem identifier="fpgacircuit" amount="5" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Price baseprice="1500" canbespecial="false" sold="false" />
+      <PreferredContainer primary="medcab" />
+      <InventoryIcon texture="%ModDir%/Content/Texture/icons.png" sourcerect="142,10,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Texture/icons.png" sourcerect="142,10,55,39" origin="0.5,0.5" />
+      <Body width="30" height="18" density="10" waterdragcoefficient="8" />
+      <Holdable slots="Any" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+
+    <!-- 复生芯片：放进耳机的「复生」槽，佩戴者生命值跌到 -65% 时触发复生 -->
+    <Item name="" identifier="respawn_chip" nameidentifier="respawn_chip"
+      descriptionidentifier="respawn_chip" scale="0.35" category="Misc"
+      tags="smallitem,artifact_slot_headset" cargocontaineridentifier="metalcrate"
+      impactsoundtag="impact_metal_light" health="100">
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false">
+        <RequiredItem identifier="fpgacircuit" amount="5" />
+        <RequiredItem identifier="dementonite" amount="3" />
+        <RequiredItem identifier="swimbladder" amount="3" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Price baseprice="5000" canbespecial="false" sold="false" />
+      <PreferredContainer primary="medcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab"
+        amount="1" spawnprobability="0.025" />
+      <InventoryIcon texture="%ModDir%/Content/Texture/icons.png" sourcerect="408,10,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Texture/icons.png" sourcerect="408,10,55,39" origin="0.5,0.5" />
+      <Body width="30" height="18" density="10" waterdragcoefficient="8" />
+      <Holdable slots="Any" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This" interval="0.5" disabledeltatime="true"
+          stackable="false">
+          <Sound file="%ModDir%/Content/Sound/chip_broken.ogg" range="1000" />
+          <Explosion range="25" ballastfloradamage="10" structuredamage="5" levelwalldamage="10"
+            itemdamage="5" force="25" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+
+    <!-- 传送芯片：装进耳机的「传送」槽，佩戴者生命值跌到 -50% 时被传送到最近的复生点 -->
+    <Item name="" identifier="teleport_chip" nameidentifier="teleport_chip"
+      descriptionidentifier="teleport_chip" scale="0.35" category="Misc"
+      tags="smallitem,artifact_slot_headset" cargocontaineridentifier="metalcrate"
+      impactsoundtag="impact_metal_light" health="100">
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false">
+        <RequiredItem identifier="fpgacircuit" amount="5" />
+        <RequiredItem identifier="fulgurium" amount="4" />
+        <RequiredItem identifier="sonarbeacon" amount="1" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Price baseprice="5000" canbespecial="false" sold="false" />
+      <PreferredContainer primary="medcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab"
+        amount="1" spawnprobability="0.025" />
+      <InventoryIcon texture="%ModDir%/Content/Texture/icons.png" sourcerect="292,76,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Texture/icons.png" sourcerect="292,76,55,39" origin="0.5,0.5" />
+      <Body width="30" height="18" density="10" waterdragcoefficient="8" />
+      <Holdable slots="Any" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This" interval="0.5" disabledeltatime="true"
+          stackable="false">
+          <Sound file="%ModDir%/Content/Sound/chip_broken.ogg" range="1000" />
+          <Explosion range="25" ballastfloradamage="10" structuredamage="5" levelwalldamage="10"
+            itemdamage="5" force="25" severlimbsprobability="0.5" decal="explosion" decalsize="0.5">
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+
+    <!-- buff 芯片：装进耳机的「增益」槽，佩戴者才获得全速拖拽（不消耗耐久） -->
+    <Item name="" identifier="buff_chip" nameidentifier="buff_chip"
+      descriptionidentifier="buff_chip" scale="0.35" category="Misc"
+      tags="smallitem,artifact_slot_headset,buff_headset_chips"
+      cargocontaineridentifier="metalcrate"
+      impactsoundtag="impact_metal_light">
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false">
+        <RequiredItem identifier="fpgacircuit" amount="5" />
+        <RequiredItem identifier="dementonite" amount="2" />
+        <RequiredItem identifier="adrenaline" amount="10" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Price baseprice="5000" canbespecial="false" sold="false" />
+      <PreferredContainer primary="medcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab"
+        amount="1" spawnprobability="0.025" />
+      <InventoryIcon texture="%ModDir%/Content/Texture/icons.png" sourcerect="142,10,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Texture/icons.png" sourcerect="142,10,55,39" origin="0.5,0.5" />
+      <Body width="30" height="18" density="10" waterdragcoefficient="8" />
+      <Holdable slots="Any" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+
+    <!-- 不朽芯片：装进耳机的「免死」槽，佩戴者才获得奇迹进行中 / 水压奇迹（不消耗耐久） -->
+    <Item name="" identifier="immortal_chip" nameidentifier="immortal_chip"
+      descriptionidentifier="immortal_chip" scale="0.35" category="Misc"
+      tags="smallitem,artifact_slot_headset" cargocontaineridentifier="metalcrate"
+      impactsoundtag="impact_metal_light">
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false">
+        <RequiredItem tag="alienartifact" amount="1" />
+        <RequiredItem identifier="fpgacircuit" amount="5" />
+        <RequiredItem identifier="physicorium" amount="5" />
+        <RequiredItem identifier="nitroglycerin" amount="3" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Price baseprice="5000" canbespecial="false" sold="false" />
+      <PreferredContainer primary="medcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab"
+        amount="1" spawnprobability="0.025" />
+      <InventoryIcon texture="%ModDir%/Content/Texture/icons.png" sourcerect="275,10,55,39" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Texture/icons.png" sourcerect="275,10,55,39" origin="0.5,0.5"
+        scale="0.75" />
+      <Body width="30" height="18" density="10" waterdragcoefficient="8" />
+      <Holdable slots="Any" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+
+    <!-- 复生点：在潜艇编辑器里像设备一样放置；耳机持有者濒死时传送到最近的一个 -->
+    <Item name="" identifier="respawn_point" nameidentifier="respawn_point"
+      descriptionidentifier="respawn_point" scale="0.25" category="Misc"
+      spritecolor="255,255,255,150" tags=""
+      allowasextracargo="false" cargocontaineridentifier="metalcrate">
+      <Sprite texture="%ModDir%/Content/Texture/icons.png" sourcerect="78,76,204,218" depth="0.5"
+        origin="0.5,0.5" color="120,255,200,170" />
+      <StaticBody width="8" height="8" />
+    </Item>
+  </Items>
+</Override>

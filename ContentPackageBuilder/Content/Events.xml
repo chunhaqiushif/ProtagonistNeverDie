@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    复生传送特效事件（写法参照 [V+]潜艇传送器 的 SupportEvents.xml）
+    - 由 items.xml 里耳机的 <StatusEffect type="OnUse"> + <TriggerEvent> 触发
+    - Lua 侧通过 item.ApplyStatusEffects(ActionType.OnUse, ...) 主动触发
+    - targettag="protagonist_tp" 对应耳机 StatusEffect 上的 EventTargetTag
+-->
+<Randomevents>
+  <EventPrefabs>
+    <ScriptedEvent identifier="protagonist_teleportfx">
+      <StatusEffectAction targettag="protagonist_tp">
+        <StatusEffect target="Character" stackable="false">
+          <ParticleEmitter particle="protagonist_teleporter" anglemax="0" particleamount="3"
+            scalemin="0.75" scalemax="0.8" />
+          <Sound file="%ModDir%/Content/Sound/teleport1.ogg" range="3000" selectionmode="Random" />
+          <Sound file="%ModDir%/Content/Sound/teleport2.ogg" range="3000" />
+          <Sound file="%ModDir%/Content/Sound/teleport3.ogg" range="3000" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <ClearTagAction tag="protagonist_tp" />
+    </ScriptedEvent>
+    <!-- 复生芯片：触发瞬间播放除颤仪音效 + 持续 2 秒的冰晶粒子，2 秒后才开始回血 -->
+    <ScriptedEvent identifier="protagonist_defib">
+      <!-- 除颤仪音效：一次性 -->
+      <StatusEffectAction targettag="protagonist_defib">
+        <StatusEffect target="Character" stackable="false">
+          <Sound file="%ModDir%/Content/Sound/defibrillator.ogg" range="3000" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <ClearTagAction tag="protagonist_defib" />
+    </ScriptedEvent>
+  </EventPrefabs>
+</Randomevents>

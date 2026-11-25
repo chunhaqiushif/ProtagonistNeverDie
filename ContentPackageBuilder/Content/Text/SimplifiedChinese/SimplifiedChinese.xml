@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
+  <entityname.artifact_slot_headset>异星芯片插槽耳机</entityname.artifact_slot_headset>
+  <entitydescription.artifact_slot_headset>使用了异星造物材料设计的插槽式自注射耳机\n可插入：不朽/复生/传送/增益芯片\n插入对应芯片获取效果</entitydescription.artifact_slot_headset>
+  <afflictionname.custom_IgnoredByEnemyAI>被忽略的目标</afflictionname.custom_IgnoredByEnemyAI>
+  <afflictiondescription.custom_IgnoredByEnemyAI>生命力耗尽的你仿佛已经是一具尸体，但不朽的祝福让你从怪物的眼中完全消失了</afflictiondescription.custom_IgnoredByEnemyAI>
+  <afflictionname.custom_emergencyresponse>高效拖行</afflictionname.custom_emergencyresponse>
+  <afflictiondescription.custom_emergencyresponse>可以快速拖拽不受控的单位</afflictiondescription.custom_emergencyresponse>
+  <afflictionname.custom_reaperstax>「代价」</afflictionname.custom_reaperstax>
+  <afflictiondescription.custom_reaperstax>即使不会阵亡，无尽的虚弱也会萦绕着你...</afflictiondescription.custom_reaperstax>
+  <afflictionname.custom_miracleworker>奇迹祝福</afflictionname.custom_miracleworker>
+  <afflictiondescription.custom_miracleworker>即使生命力完全凋零，你也不会屈服于死亡\n（解构仪除外）</afflictiondescription.custom_miracleworker>
+  <afflictionname.custom_pressurestabilized>水压奇迹</afflictionname.custom_pressurestabilized>
+  <afflictiondescription.custom_pressurestabilized>你不会被水压致死，但会深受内脏损伤以及深层组织损伤的折磨</afflictiondescription.custom_pressurestabilized>
+  <entityname.maxhealth_chip>生命芯片</entityname.maxhealth_chip>
+  <entitydescription.maxhealth_chip>装入异星芯片插槽耳机后，会提升最大生命值</entitydescription.maxhealth_chip>
+  <entityname.respawn_chip>复生芯片</entityname.respawn_chip>
+  <entitydescription.respawn_chip>装入异星芯片插槽耳机后，佩戴者生命值低到一定程度时会获得「复生祝福」，短暂时间内持续治疗身上的病症以及「代价」\n每次触发会消耗芯片耐久，触发后进入冷却</entitydescription.respawn_chip>
+  <entityname.teleport_chip>传送芯片</entityname.teleport_chip>
+  <entitydescription.teleport_chip>装入异星芯片插槽耳机后，佩戴者生命值低到一定程度时，会被传送到最近的复生点（潜艇内不会被传送）\n如果佩戴者死亡，尸体会被送回船上\n每次触发会消耗芯片耐久，触发后进入冷却</entitydescription.teleport_chip>
+  <entityname.buff_chip>拖行芯片</entityname.buff_chip>
+  <entitydescription.buff_chip>装入异星芯片插槽耳机后，佩戴者获得「高效拖行」效果，可以快速拖拽不受控的单位</entitydescription.buff_chip>
+  <entityname.immortal_chip>不朽芯片</entityname.immortal_chip>
+  <entitydescription.immortal_chip>装入异星芯片插槽耳机后，佩戴者获得与「奇迹进行中」「水压免疫」相同的效果</entitydescription.immortal_chip>
+  <entityname.respawn_point>复生点</entityname.respawn_point>
+  <afflictionname.custom_maxheathbuff>生命祝福</afflictionname.custom_maxheathbuff>
+  <afflictiondescription.custom_maxheathbuff>最大生命值略有提升</afflictiondescription.custom_maxheathbuff>
+  <afflictionname.custom_respawnblessing>复生祝福</afflictionname.custom_respawnblessing>
+  <afflictiondescription.custom_respawnblessing>正在从死亡边缘恢复...</afflictiondescription.custom_respawnblessing>
+  <afflictionname.custom_respawnready>复生祝福</afflictionname.custom_respawnready>
+  <afflictiondescription.custom_respawnready>生命值低到一定程度时会获得「复生祝福」，短暂时间内持续治疗身上的病症以及「代价」</afflictiondescription.custom_respawnready>
+  <afflictionname.custom_respawncooldown>复生冷却</afflictionname.custom_respawncooldown>
+  <afflictiondescription.custom_respawncooldown>复生芯片目前无法被触发</afflictiondescription.custom_respawncooldown>
+  <afflictionname.custom_teleportready>紧急传送</afflictionname.custom_teleportready>
+  <afflictiondescription.custom_teleportready>生命值低到一定程度时，会被传送到最近的复生点（潜艇内不会被传送）</afflictiondescription.custom_teleportready>
+  <afflictionname.custom_teleportcooldown>传送冷却</afflictionname.custom_teleportcooldown>
+  <afflictiondescription.custom_teleportcooldown>传送芯片目前无法触发</afflictiondescription.custom_teleportcooldown>
+  <pluginsetting.teleport_threshold.name>传送芯片：触发阈值（%生命力）</pluginsetting.teleport_threshold.name>
+  <pluginsetting.teleport_threshold.desc>生命力百分比降到该值及以下时触发传送，取值 -100 ~ 0。已在主潜艇内时不传送。</pluginsetting.teleport_threshold.desc>
+  <pluginsetting.respawn_threshold.name>复生芯片：触发阈值（%生命力）</pluginsetting.respawn_threshold.name>
+  <pluginsetting.respawn_threshold.desc>生命力百分比降到该值及以下时开始除颤复生，取值 -100 ~ 0。</pluginsetting.respawn_threshold.desc>
+  <pluginsetting.teleport_cooldown.name>传送芯片：冷却（秒）</pluginsetting.teleport_cooldown.name>
+  <pluginsetting.teleport_cooldown.desc>两次触发之间的最短间隔，取值 10 ~ 600 秒。</pluginsetting.teleport_cooldown.desc>
+  <pluginsetting.respawn_cooldown.name>复生芯片：冷却（秒）</pluginsetting.respawn_cooldown.name>
+  <pluginsetting.respawn_cooldown.desc>两次触发之间的最短间隔，取值 10 ~ 600 秒。</pluginsetting.respawn_cooldown.desc>
+  <pluginsetting.teleport_chip_loss.name>传送芯片：单次耐久消耗（%）</pluginsetting.teleport_chip_loss.name>
+  <pluginsetting.teleport_chip_loss.desc>玩家触发一次消耗的耐久百分比，取值 5 ~ 100。</pluginsetting.teleport_chip_loss.desc>
+  <pluginsetting.teleport_chip_loss_bot.name>传送芯片：单次耐久消耗·NPC（%）</pluginsetting.teleport_chip_loss_bot.name>
+  <pluginsetting.teleport_chip_loss_bot.desc>佩戴者为 NPC 时使用的耐久消耗百分比，取值 5 ~ 100。</pluginsetting.teleport_chip_loss_bot.desc>
+  <pluginsetting.respawn_chip_loss.name>复生芯片：单次耐久消耗（%）</pluginsetting.respawn_chip_loss.name>
+  <pluginsetting.respawn_chip_loss.desc>玩家触发一次消耗的耐久百分比，取值 5 ~ 100。</pluginsetting.respawn_chip_loss.desc>
+  <pluginsetting.respawn_chip_loss_bot.name>复生芯片：单次耐久消耗·NPC（%）</pluginsetting.respawn_chip_loss_bot.name>
+  <pluginsetting.respawn_chip_loss_bot.desc>佩戴者为 NPC 时使用的耐久消耗百分比，取值 5 ~ 100。</pluginsetting.respawn_chip_loss_bot.desc>
+</infotexts>

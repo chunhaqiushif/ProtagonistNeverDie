@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $TexturePacker:SmartUpdate:b4796c69045e7283ea157b6af404e6e7$ -->
+<x2d version="1.0">
+    <texture n="buffs" path="res/graphics/buffs.png">
+        <s n="custom_emergencyresponse" texture="%ModDir%/Content/Texture/buffs.png" sourcerect="10,10,115,123" />
+        <s n="custom_miracleworker" texture="%ModDir%/Content/Texture/buffs.png" sourcerect="135,10,115,123" />
+        <s n="custom_respawnblessing" texture="%ModDir%/Content/Texture/buffs.png" sourcerect="260,10,115,123" />
+        <s n="custom_respawnblessing_cooldown" texture="%ModDir%/Content/Texture/buffs.png" sourcerect="385,10,102,102" />
+        <s n="teleport" texture="%ModDir%/Content/Texture/buffs.png" sourcerect="10,143,115,123" />
+        <s n="teleport_cooldown" texture="%ModDir%/Content/Texture/buffs.png" sourcerect="135,143,102,102" />
+    </texture>
+</x2d>
