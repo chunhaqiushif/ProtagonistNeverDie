@@ -326,7 +326,11 @@ internal static class PluginCore
             // 3.2) 复生芯片
             if (respawnChip != null && vitality <= RespawnThreshold)
             {
-                TryBless(character, headset, respawnChip);
+                bool blessed = TryBless(character, headset, respawnChip);
+
+                // 复生生效时，如果有传送芯片则直接触发传送（两颗芯片各扣一次耐久）
+                if (blessed && teleportChip != null)
+                    TryTeleport(character, headset, teleportChip);
             }
 
             // 3.3) 血量已小于等于阈值：吃代价
@@ -392,7 +396,6 @@ internal static class PluginCore
             // 芯片销毁统一由「耐久归零 → 计时」处理，这里不再介入
         });
 
-        Plugin.Log(character.Name + " 触发传送芯片");
         return true;
     }
 
@@ -511,7 +514,6 @@ internal static class PluginCore
             if (!PendingBless.Remove(character.ID)) return;
             if (character == null || character.Removed || character.IsDead) return;
             ApplyFull(character, AffBlessing);
-            // 芯片销毁统一由「耐久归零 → 计时」处理，这里不再介入
         });
 
         Plugin.Log(character.Name + " 触发复生芯片（除颤中）");
@@ -575,7 +577,6 @@ internal static class PluginCore
 
         if (chip.Condition <= 0f)
         {
-            // 归零瞬间由引擎自动执行 XML 里的 OnBroken（音效 / 爆炸 / 失血）
             chip.NonInteractable = true;          // 立即锁定，玩家拿不走
             ScheduleChipDestroy(chip);            // 计时后移除物品
         }
