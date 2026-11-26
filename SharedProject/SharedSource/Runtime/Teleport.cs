@@ -19,7 +19,7 @@ internal static partial class PluginCore
         if (IsOnMainSub(character)) return false;
         if (InCooldown(TeleportCooldown, chip, TeleportCooldownSeconds)) return false;
 
-        Item point = FindNearestRespawnPoint(character);
+        Item? point = FindNearestRespawnPoint(character);
         Vector2? destination = point != null ? point.WorldPosition : FindRandomSpawnPoint(character);
         if (destination == null) return false;
 
@@ -36,7 +36,7 @@ internal static partial class PluginCore
         {
             try { if (character != null && !character.Removed) character.TeleportTo(target); }
             catch (Exception e) { LogError(e); }
-            PlayTeleportFx(character, headset);
+            PlayTeleportFx(character!, headset);
             // 芯片销毁统一由「耐久归零 → 计时」处理，这里不再介入
         });
 
@@ -53,7 +53,7 @@ internal static partial class PluginCore
         Item headset = inventory.FindEquippedItemByTag(Tag);
         if (headset == null) return;
 
-        if (!CollectChips(headset).TryGetValue(ChipTeleport, out Item chip)) return;
+        if (!CollectChips(headset).TryGetValue(ChipTeleport, out Item? chip)) return;
 
         TryTeleport(character, headset, chip);
     }
@@ -68,13 +68,13 @@ internal static partial class PluginCore
         catch (Exception e) { LogError(e); }
     }
 
-    private static Item FindNearestRespawnPoint(Character character)
+    private static Item? FindNearestRespawnPoint(Character character)
     {
         List<Item> list = Item.ItemList;
         if (list == null) return null;
 
         Vector2 position = character.WorldPosition;
-        Item best = null;
+        Item? best = null;
         float bestDistance = float.MaxValue;
 
         for (int i = list.Count - 1; i >= 0; i--)
@@ -99,9 +99,9 @@ internal static partial class PluginCore
         List<WayPoint> list = WayPoint.WayPointList;
         if (list == null) return null;
 
-        Submarine submarine = Submarine.MainSub ?? character.Submarine;
+        Submarine? submarine = Submarine.MainSub ?? character.Submarine;
         bool filterSub = submarine != null;
-        ushort subId = filterSub ? submarine.ID : (ushort)0;
+        ushort subId = submarine?.ID ?? 0;
 
         List<Vector2> candidates = new List<Vector2>();
         for (int i = 0; i < list.Count; i++)

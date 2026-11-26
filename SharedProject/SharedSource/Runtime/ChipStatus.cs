@@ -15,7 +15,7 @@ internal static partial class PluginCore
     {
         if (health == null) return;
 
-        chips.TryGetValue(ChipRespawn, out Item respawnChip);
+        chips.TryGetValue(ChipRespawn, out Item? respawnChip);
         if (respawnChip != null)
         {
             float ratio = CooldownRatio(ReviveCooldown, respawnChip, RespawnCooldownSeconds);
@@ -32,7 +32,7 @@ internal static partial class PluginCore
             ClearAffliction(health, AffRespawnCd);
         }
 
-        chips.TryGetValue(ChipTeleport, out Item teleportChip);
+        chips.TryGetValue(ChipTeleport, out Item? teleportChip);
         if (teleportChip != null)
         {
             float ratio = CooldownRatio(TeleportCooldown, teleportChip, TeleportCooldownSeconds);
@@ -56,7 +56,7 @@ internal static partial class PluginCore
 
     private static void ClearChipStatus(Character character)
     {
-        CharacterHealth health = character?.CharacterHealth;
+        CharacterHealth? health = character?.CharacterHealth;
         if (health == null) return;
 
         for (int i = 0; i < ChipStatusAfflictions.Length; i++)

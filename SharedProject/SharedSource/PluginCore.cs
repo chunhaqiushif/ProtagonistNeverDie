@@ -119,11 +119,11 @@ internal static partial class PluginCore
         if (health == null) return;
 
         Dictionary<Identifier, Item> chips = CollectChips(headset);
-        chips.TryGetValue(ChipRespawn, out Item respawnChip);
-        chips.TryGetValue(ChipTeleport, out Item teleportChip);
-        chips.TryGetValue(ChipBuff, out Item buffChip);
-        chips.TryGetValue(ChipImmortal, out Item immortalChip);
-        chips.TryGetValue(ChipMaxHealth, out Item maxHealthChip);
+        chips.TryGetValue(ChipRespawn, out Item? respawnChip);
+        chips.TryGetValue(ChipTeleport, out Item? teleportChip);
+        chips.TryGetValue(ChipBuff, out Item? buffChip);
+        chips.TryGetValue(ChipImmortal, out Item? immortalChip);
+        chips.TryGetValue(ChipMaxHealth, out Item? maxHealthChip);
 
         // 1) 增益芯片：全速拖拽
         if (buffChip != null)

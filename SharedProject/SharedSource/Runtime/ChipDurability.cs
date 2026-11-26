@@ -56,7 +56,7 @@ internal static partial class PluginCore
         {
             if (GameMain.NetworkMember == null || !GameMain.NetworkMember.IsServer) return;   // 单机 / 纯客户端
             if (chip.SerializableProperties == null) return;
-            if (!chip.SerializableProperties.TryGetValue(NonInteractableProperty, out SerializableProperty prop)) return;
+            if (!chip.SerializableProperties.TryGetValue(NonInteractableProperty, out SerializableProperty? prop)) return;
 
             IGameNetwork gameNetwork = PluginServiceProvider.GetService<IGameNetwork>();
             gameNetwork?.CreateVanillaEntityEvent(chip, new Item.ChangePropertyEventData(prop, chip));
@@ -156,8 +156,8 @@ internal static partial class PluginCore
             // 耐久正常且不在锁定期 → 不是我们要管的物品
             if (item.Condition > 0f && !ChipLocked.Contains(item.ID)) return true;
 
-            ItemContainer container = (__instance as ItemInventory)?.Container;
-            Item owner = container?.Item;
+            ItemContainer? container = (__instance as ItemInventory)?.Container;
+            Item? owner = container?.Item;
             if (owner == null || !owner.HasTag(Tag)) return true;
 
             // 耳机本体正在被销毁 / 拆解时放行，否则 0 耐久芯片会残留在被清空的容器里
