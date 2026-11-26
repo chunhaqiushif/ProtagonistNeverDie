@@ -1,4 +1,4 @@
-主人公不会死 （C#）
+﻿主人公不会死 （C#）
 
 使用了C#脚本，依赖于“Lua For Barotrauma”
 由AI辅助生成代码，我负责调试，介意请勿使用
@@ -17,7 +17,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3567916643
 
 DLC更新后可能会进行一次适配更新（据说官方会支持C#脚本，会在此时进行调整）
 
-Github：https://github.com/chunhaqiushif/Protagonist-Never-Die
+Github：https://github.com/chunhaqiushif/ProtagonistNeverDie
 BA光环样式补丁：https://steamcommunity.com/sharedfiles/filedetails/?id=3845185576
 
 ----------------------------------------------
@@ -42,5 +42,5 @@ However, the crafting recipe has been modified here, and the functionality has b
 
 An update to ensure compatibility may follow the DLC release (it is rumored that the developers will add support for C# scripting, and adjustments will be made at that time).
 
-Github：https://github.com/chunhaqiushif/Protagonist-Never-Die
+Github：https://github.com/chunhaqiushif/ProtagonistNeverDie
 BA halo patch：https://steamcommunity.com/sharedfiles/filedetails/?id=3845185576

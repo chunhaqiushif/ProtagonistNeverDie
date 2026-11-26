@@ -1,21 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!--
-  模组名令牌会在构建时被替换为 BuildData.props 里的 ModName（ProtagonistNeverDie）。
-  程序集路径规则：<Mod>/<平台>/<端>/<ModName><端>.dll，由 *Items.props 的 CopyFiles 目标产出。
-
-  当前只构建 Windows 解决方案，故仅保留 Windows 两条；
-  若以后要发布 Linux / Mac 版本，请先构建对应解决方案，再取消下面注释。
-  保留了未构建平台的条目会导致该平台加载插件时找不到 dll 而报 AssemblyFailedToLoad。
--->
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <PluginInfos notsyncedinmultiplayer="false">
   <MainAssemblyInfo assemblypath="%ModDir%/Windows/Server/%ModName%Server.dll" platforms="Windows" targets="Server" />
   <MainAssemblyInfo assemblypath="%ModDir%/Windows/Client/%ModName%Client.dll" platforms="Windows" targets="Client" />
 
-  <!--
   <MainAssemblyInfo assemblypath="%ModDir%/Linux/Server/%ModName%Server.dll" platforms="Linux" targets="Server" />
   <MainAssemblyInfo assemblypath="%ModDir%/Linux/Client/%ModName%Client.dll" platforms="Linux" targets="Client" />
 
   <MainAssemblyInfo assemblypath="%ModDir%/Mac/Server/%ModName%Server.dll" platforms="Mac" targets="Server" />
   <MainAssemblyInfo assemblypath="%ModDir%/Mac/Client/%ModName%Client.dll" platforms="Mac" targets="Client" />
-  -->
 </PluginInfos>
