@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-    复生传送特效事件（写法参照 [V+]潜艇传送器 的 SupportEvents.xml）
-    - 由 items.xml 里耳机的 <StatusEffect type="OnUse"> + <TriggerEvent> 触发
-    - Lua 侧通过 item.ApplyStatusEffects(ActionType.OnUse, ...) 主动触发
-    - targettag="protagonist_tp" 对应耳机 StatusEffect 上的 EventTargetTag
--->
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Randomevents>
   <EventPrefabs>
     <ScriptedEvent identifier="protagonist_teleportfx">
@@ -19,7 +13,7 @@
       </StatusEffectAction>
       <ClearTagAction tag="protagonist_tp" />
     </ScriptedEvent>
-    <!-- 复生芯片：触发瞬间播放除颤仪音效 + 持续 2 秒的冰晶粒子，2 秒后才开始回血 -->
+    <!-- 复生芯片：触发瞬间播放除颤仪音效，2 秒后才开始回血 -->
     <ScriptedEvent identifier="protagonist_defib">
       <!-- 除颤仪音效：一次性 -->
       <StatusEffectAction targettag="protagonist_defib">

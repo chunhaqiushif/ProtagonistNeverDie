@@ -32,23 +32,7 @@
   <afflictionname.custom_respawncooldown>复生冷却</afflictionname.custom_respawncooldown>
   <afflictiondescription.custom_respawncooldown>复生芯片目前无法被触发</afflictiondescription.custom_respawncooldown>
   <afflictionname.custom_teleportready>紧急传送</afflictionname.custom_teleportready>
-  <afflictiondescription.custom_teleportready>生命值低到一定程度时，会被传送到最近的复生点（潜艇内不会被传送）</afflictiondescription.custom_teleportready>
+  <afflictiondescription.custom_teleportready>生命值低到一定程度时，会被传送到最近的复生点\n（潜艇内不会被传送）</afflictiondescription.custom_teleportready>
   <afflictionname.custom_teleportcooldown>传送冷却</afflictionname.custom_teleportcooldown>
   <afflictiondescription.custom_teleportcooldown>传送芯片目前无法触发</afflictiondescription.custom_teleportcooldown>
-  <pluginsetting.teleport_threshold.name>传送芯片：触发阈值（%生命力）</pluginsetting.teleport_threshold.name>
-  <pluginsetting.teleport_threshold.desc>生命力百分比降到该值及以下时触发传送，取值 -100 ~ 0。已在主潜艇内时不传送。</pluginsetting.teleport_threshold.desc>
-  <pluginsetting.respawn_threshold.name>复生芯片：触发阈值（%生命力）</pluginsetting.respawn_threshold.name>
-  <pluginsetting.respawn_threshold.desc>生命力百分比降到该值及以下时开始除颤复生，取值 -100 ~ 0。</pluginsetting.respawn_threshold.desc>
-  <pluginsetting.teleport_cooldown.name>传送芯片：冷却（秒）</pluginsetting.teleport_cooldown.name>
-  <pluginsetting.teleport_cooldown.desc>两次触发之间的最短间隔，取值 10 ~ 600 秒。</pluginsetting.teleport_cooldown.desc>
-  <pluginsetting.respawn_cooldown.name>复生芯片：冷却（秒）</pluginsetting.respawn_cooldown.name>
-  <pluginsetting.respawn_cooldown.desc>两次触发之间的最短间隔，取值 10 ~ 600 秒。</pluginsetting.respawn_cooldown.desc>
-  <pluginsetting.teleport_chip_loss.name>传送芯片：单次耐久消耗（%）</pluginsetting.teleport_chip_loss.name>
-  <pluginsetting.teleport_chip_loss.desc>玩家触发一次消耗的耐久百分比，取值 5 ~ 100。</pluginsetting.teleport_chip_loss.desc>
-  <pluginsetting.teleport_chip_loss_bot.name>传送芯片：单次耐久消耗·NPC（%）</pluginsetting.teleport_chip_loss_bot.name>
-  <pluginsetting.teleport_chip_loss_bot.desc>佩戴者为 NPC 时使用的耐久消耗百分比，取值 5 ~ 100。</pluginsetting.teleport_chip_loss_bot.desc>
-  <pluginsetting.respawn_chip_loss.name>复生芯片：单次耐久消耗（%）</pluginsetting.respawn_chip_loss.name>
-  <pluginsetting.respawn_chip_loss.desc>玩家触发一次消耗的耐久百分比，取值 5 ~ 100。</pluginsetting.respawn_chip_loss.desc>
-  <pluginsetting.respawn_chip_loss_bot.name>复生芯片：单次耐久消耗·NPC（%）</pluginsetting.respawn_chip_loss_bot.name>
-  <pluginsetting.respawn_chip_loss_bot.desc>佩戴者为 NPC 时使用的耐久消耗百分比，取值 5 ~ 100。</pluginsetting.respawn_chip_loss_bot.desc>
 </infotexts>

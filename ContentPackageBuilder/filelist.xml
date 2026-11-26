@@ -1,29 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!--
-  插件规则：本文件由 ContentPackageBuilder 复制到 <ModDeployDir>\<ModName>\filelist.xml，
-  复制过程中会把模组名令牌替换成 BuildData.props 里的 ModName（ProtagonistNeverDie）。
-  内容文件全部位于 Content\ 下，因此路径前缀必须是 %ModDir%/Content/。
-  modversion / steamworkshopid 沿用原 LuaCs 版，便于继续更新同一个创意工坊条目。
--->
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPackage name="%ModName%" modversion="2.0.0" steamworkshopid="3840822539">
-
-  <!-- 插件入口清单（含各平台 / 各端的程序集路径） -->
   <PluginInfo file="%ModDir%/PluginInfo.xml" />
-
-  <!-- 物品：耳机本体 + 5 种功能芯片 -->
   <Item file="%ModDir%/Content/items.xml" />
-
-  <!-- 文本：英文 / 简体中文 -->
   <Text file="%ModDir%/Content/Text/English/English.xml" />
   <Text file="%ModDir%/Content/Text/SimplifiedChinese/SimplifiedChinese.xml" />
-
-  <!-- 自定义病症：复生祝福、芯片冷却图标、主角的代价等 -->
   <Afflictions file="%ModDir%/Content/afflictions.xml" />
-
-  <!-- 传送特效粒子 -->
   <Particles file="%ModDir%/Content/ParticlePrefabs.xml" />
-
-  <!-- 随机事件（音效触发） -->
   <RandomEvents file="%ModDir%/Content/Events.xml" />
-
 </ContentPackage>

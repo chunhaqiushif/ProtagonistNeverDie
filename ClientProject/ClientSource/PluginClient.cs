@@ -10,6 +10,6 @@ public partial class Plugin
     /// </summary>
     public partial void InitProjectSpecific()
     {
-        Log("客户端初始化完成");
+        Log("Client initialization complete");
     }
 }

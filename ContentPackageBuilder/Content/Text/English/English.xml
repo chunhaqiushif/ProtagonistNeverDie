@@ -35,20 +35,4 @@
   <afflictiondescription.custom_teleportready>Teleports you to the nearest respawn point once vitality falls low enough (no teleport inside a submarine)</afflictiondescription.custom_teleportready>
   <afflictionname.custom_teleportcooldown>Teleport Cooldown</afflictionname.custom_teleportcooldown>
   <afflictiondescription.custom_teleportcooldown>The Teleport Chip cannot be triggered right now</afflictiondescription.custom_teleportcooldown>
-  <pluginsetting.teleport_threshold.name>Teleport Chip: trigger threshold (%)</pluginsetting.teleport_threshold.name>
-  <pluginsetting.teleport_threshold.desc>Triggers the teleport when vitality (in %, range -100 to 0) drops to or below this value. No teleport while inside the main submarine.</pluginsetting.teleport_threshold.desc>
-  <pluginsetting.respawn_threshold.name>Respawn Chip: trigger threshold (%)</pluginsetting.respawn_threshold.name>
-  <pluginsetting.respawn_threshold.desc>Starts the resuscitation sequence when vitality (in %, range -100 to 0) drops to or below this value.</pluginsetting.respawn_threshold.desc>
-  <pluginsetting.teleport_cooldown.name>Teleport Chip: cooldown (s)</pluginsetting.teleport_cooldown.name>
-  <pluginsetting.teleport_cooldown.desc>Seconds between two triggers. Range 10 to 600.</pluginsetting.teleport_cooldown.desc>
-  <pluginsetting.respawn_cooldown.name>Respawn Chip: cooldown (s)</pluginsetting.respawn_cooldown.name>
-  <pluginsetting.respawn_cooldown.desc>Seconds between two triggers. Range 10 to 600.</pluginsetting.respawn_cooldown.desc>
-  <pluginsetting.teleport_chip_loss.name>Teleport Chip: condition cost per use (%)</pluginsetting.teleport_chip_loss.name>
-  <pluginsetting.teleport_chip_loss.desc>Percentage of the chip's maximum condition consumed by one trigger (player wearer). Range 5 to 100.</pluginsetting.teleport_chip_loss.desc>
-  <pluginsetting.teleport_chip_loss_bot.name>Teleport Chip: condition cost per use, NPC (%)</pluginsetting.teleport_chip_loss_bot.name>
-  <pluginsetting.teleport_chip_loss_bot.desc>Same as above, used when the wearer is an NPC. Range 5 to 100.</pluginsetting.teleport_chip_loss_bot.desc>
-  <pluginsetting.respawn_chip_loss.name>Respawn Chip: condition cost per use (%)</pluginsetting.respawn_chip_loss.name>
-  <pluginsetting.respawn_chip_loss.desc>Percentage of the chip's maximum condition consumed by one trigger (player wearer). Range 5 to 100.</pluginsetting.respawn_chip_loss.desc>
-  <pluginsetting.respawn_chip_loss_bot.name>Respawn Chip: condition cost per use, NPC (%)</pluginsetting.respawn_chip_loss_bot.name>
-  <pluginsetting.respawn_chip_loss_bot.desc>Same as above, used when the wearer is an NPC. Range 5 to 100.</pluginsetting.respawn_chip_loss_bot.desc>
 </infotexts>
