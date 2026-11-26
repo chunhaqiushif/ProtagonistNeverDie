@@ -110,7 +110,20 @@ internal static class PluginCore
     private static float _elapsed;        // 距离下次结算的累计
     private static int _errorCount;
 
+    /// <summary>插件卸载时调用：清空整个插件的静态状态。</summary>
     public static void Reset()
+    {
+        ClearRuntimeState();
+        PrefabCache.Clear();
+        _clock = 0;
+        _errorCount = 0;
+    }
+
+    /// <summary> /// 回合开始时调用（新回合 / 读档 / 结束回合后重开）/// </summary>
+    internal static void OnRoundStarted() => ClearRuntimeState();
+
+    /// <summary>清理所有「按实体 ID 索引」的运行时状态。</summary>
+    private static void ClearRuntimeState()
     {
         BuffChipHolders.Clear();
         ImmortalChipHolders.Clear();
@@ -119,12 +132,11 @@ internal static class PluginCore
         TeleportCooldown.Clear();
         ReviveCooldown.Clear();
         DestroyScheduled.Clear();
-        PrefabCache.Clear();
         Scheduled.Clear();
-        _clock = 0;
+
+        // 读图耗时不应计入下一帧的 dt
         _lastClock = -1;
         _elapsed = 0f;
-        _errorCount = 0;
     }
 
     /// <summary>
@@ -181,7 +193,7 @@ internal static class PluginCore
         }
     }
 
-    /// <summary>只在单机 / 主机 / 专用服结算；联机客户端交给服务端同步。</summary>
+    /// <summary>单机/主机/客机结算方式区分，客机客户端交给服务端同步</summary>
     private static bool ShouldRun()
     {
         NetworkMember net = GameMain.NetworkMember;
@@ -516,7 +528,6 @@ internal static class PluginCore
             ApplyFull(character, AffBlessing);
         });
 
-        Plugin.Log(character.Name + " 触发复生芯片（除颤中）");
         return true;
     }
 

@@ -108,10 +108,48 @@ public partial class Plugin : IBarotraumaPlugin
             }
 
             harmony.Patch(removeItem, prefix: new HarmonyMethod(prefix));
+
+            PatchRoundStart(harmony);
         }
         catch (Exception e)
         {
             LogError("Harmony 补丁失败：" + e.Message);
+        }
+    }
+
+    /// <summary>
+    /// 回合开始（新回合 / 读档 / 结束回合后重开）时清掉上一回合遗留的冷却与延迟动作。
+    ///
+    /// GameSession.StartRound 有两个重载（levelSeed 版与 levelData 版），逐个挂钩；
+    /// postfix 不带参数，因此不依赖重载的签名细节，游戏版本微调形参也不受影响。
+    /// </summary>
+    private static void PatchRoundStart(Harmony harmony)
+    {
+        MethodInfo? callback = typeof(PluginCore).GetMethod(
+            nameof(PluginCore.OnRoundStarted), BindingFlags.Static | BindingFlags.NonPublic);
+
+        if (callback == null)
+        {
+            //LogError("未找到回合开始回调，跨回合冷却可能残留");
+            return;
+        }
+
+        int patched = 0;
+        foreach (MethodInfo method in AccessTools.GetDeclaredMethods(typeof(GameSession)))
+        {
+            if (method.Name != nameof(GameSession.StartRound)) continue;
+
+            harmony.Patch(method, postfix: new HarmonyMethod(callback));
+            patched++;
+        }
+
+        if (patched == 0)
+        {
+            //LogError("未找到 GameSession.StartRound，跨回合冷却可能残留");
+        }
+        else
+        {
+            //Log($"已挂钩回合开始（StartRound 重载 × {patched}）");
         }
     }
 
