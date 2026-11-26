@@ -1,5 +1,11 @@
-# Protagonist Never Die（插件版）
+# Protagonist Never Die（C# & 官方插件版）
 
-《潜渊症 Barotrauma》模组「主人公不会死 / 异星遗物插槽耳机」的**官方插件系统（IBarotraumaPlugin）**实现。
-早期版本是 LuaCs 内存内 C# 模组（`CSharp/Shared/ProtagonistNeverDie.cs`），本次迁移把代码与内容按插件规则重新组织：
-不再依赖 Lua For Barotrauma，直接由游戏原生插件加载器载入编译好的 .dll。
+《潜渊症 Barotrauma》模组「主人公不会死 / 异星遗物插槽耳机」的官方插件系统（IBarotraumaPlugin）实现。   
+
+在游戏内新增了一个特殊的自注射耳机，其内可以插入多种芯片来实现不同的效果：
+1. 不朽芯片：提供「奇迹进行中」「水压免疫」相同的效果，角色生命值为-100时会被怪物AI忽略
+2. 复生芯片：生命值低至一定程度后快速回血（有冷却，会消耗耐久）
+3. 传送芯片：生命值低至一定程度后会传送到主潜艇的生成点（有冷却，会消耗耐久）
+4. 更多...
+
+目前的代码与内容已经按照插件规则重新组织，不再依赖 Lua For Barotrauma，直接由游戏原生插件加载器载入编译好的 .dll。

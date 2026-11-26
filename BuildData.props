@@ -3,7 +3,7 @@
     <!-- 
     IMPORTANT: Don't make use of special (ie: spaces / : ; , \ < > ?) (periods "." are good) and non-english characters in the ModName.
      -->    
-    <ModName>ProtagonistNeverDie</ModName>
+    <ModName>Protagonist Never Die (C#)</ModName>
     <RepositoryURL>https://github.com/chunhaqiushif/ProtagonistNeverDie</RepositoryURL>
 
     <!-- 

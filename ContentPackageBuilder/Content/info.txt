@@ -1,46 +1,53 @@
 ﻿主人公不会死 （C#）
 
-使用了C#脚本，依赖于“Lua For Barotrauma”
-由AI辅助生成代码，我负责调试，介意请勿使用
+由AI辅助开发，个人负责编辑、审阅与调试，介意请勿使用
+目前的代码与内容已经按照官方插件系统（IBarotraumaPlugin）重新组织，不再依赖 Lua For Barotrauma，直接由游戏原生插件加载器载入编译好的 .dll
 
-原Mod "主角光环!(特殊自注射耳机)"
-https://steamcommunity.com/sharedfiles/filedetails/?id=3567916643
+须知：Mod中使用".dll"是存在风险的，这一点在游戏界面中也会提醒
+外部审阅代码可以访问Github：https://github.com/chunhaqiushif/ProtagonistNeverDie
+游戏内审阅请在提示的位置展开Mod并点击反编译选项来查看代码
 
-这里是它的一了百了版本（使用了C#脚本来解决xml一些奇奇怪怪的问题)
-期望的作用也基本上是一样的，让BOT或是玩家角色不会突然暴毙
-
-不过这里修改了配方，拆分了功能。除了耳机之外，还需要插入其内的4种功能芯片
+在游戏内新增了一个特殊的自注射耳机，其内可以插入多种芯片来实现不同的效果：
 1. 不朽芯片：提供「奇迹进行中」「水压免疫」相同的效果，角色生命值为-100时会被怪物AI忽略
 2. 复生芯片：生命值低至一定程度后快速回血（有冷却，会消耗耐久）
 3. 传送芯片：生命值低至一定程度后会传送到主潜艇的生成点（有冷却，会消耗耐久）
-4. 健康扫描芯片：提供健康扫描仪同种效果
+4. 更多...
 
-DLC更新后可能会进行一次适配更新（据说官方会支持C#脚本，会在此时进行调整）
-
-Github：https://github.com/chunhaqiushif/ProtagonistNeverDie
 BA光环样式补丁：https://steamcommunity.com/sharedfiles/filedetails/?id=3845185576
+
+原XML Mod "主角光环!(特殊自注射耳机)"
+https://steamcommunity.com/sharedfiles/filedetails/?id=3567916643
+
+这里是它的一了百了版本（使用了C#代码来解决xml一些奇奇怪怪的问题)
+期望的作用也基本上是一样的，让BOT或是玩家角色不会突然暴毙
+不过这里修改了配方，拆分了功能。除了耳机之外，还需要插入其内的4种功能芯片
+
+（注意本Mod与原XML Mod不兼容）
 
 ----------------------------------------------
 
 Protagonist Never Die (C#)
 
-Uses C# scripts and requires "Lua For Barotrauma" as a dependency.
-The code was generated with AI assistance and debugged by me. Please do not use this mod if that bothers you.
+Developed with AI assistance; editing, review and debugging are handled by me. Please do not use this mod if that bothers you.
+The code and content have been reorganized around the official plugin system (IBarotraumaPlugin). It no longer depends on Lua For Barotrauma; the compiled ".dll" is loaded directly by the game's native plugin loader.
 
-Original Mod "Protagonist's Halo(Special Headset)"
+Please note: using .dll files in a mod carries risks, and the game warns about this in its own UI.
+To review the code externally, visit GitHub: https://github.com/chunhaqiushif/ProtagonistNeverDie
+To review it in-game, expand the mod at the prompt and click the decompile option to view the code.
+
+This mod adds a special self-injecting headset. Various chips can be inserted into it for different effects:
+1. Immortality Chip: Grants the same effects as "Miracle in Progress" and "Pressure Resistance"; at -100 vitality the character is ignored by monster AI.
+2. Resuscitation Chip: Rapidly heals the wearer once vitality drops below a certain threshold (has a cooldown and consumes durability).
+3. Teleportation Chip: Teleports the wearer to a spawn point of the main submarine once vitality drops below a certain threshold (has a cooldown and consumes durability).
+4. More...
+
+BA halo style patch: https://steamcommunity.com/sharedfiles/filedetails/?id=3845185576
+
+Original XML mod "Protagonist's Halo (Special Self-Injecting Headset)"
 https://steamcommunity.com/sharedfiles/filedetails/?id=3567916643
 
-Here is C# version (utilizing a C# script to resolve some peculiar issues with XML).
-The intended effect remains essentially the same: preventing bots or player characters from suddenly dropping dead.
+This is its definitive version (using C# scripts to work around some odd XML issues).
+The intended effect is essentially the same: preventing bots or player characters from suddenly dropping dead.
+However, the crafting recipe has been changed here and the functionality split up: besides the headset itself, you also need to insert four functional chips into it.
 
-However, the crafting recipe has been modified here, and the functionality has been broken down: in addition to the headset itself, you also need to insert four specific functional chips into it.
-
-1. Immortality Chip: Provides the same effects as "Miracle in Progress" and "Pressure Resistance"; when a character's health reaches -100, they will be ignored by monster AI.
-2. Resuscitation Chip: Rapidly restores health when it drops below a certain threshold (has a cooldown and consumes durability).
-3. Teleportation Chip: Teleports the character to the main submarine's spawn point when their health drops below a certain threshold (has a cooldown and consumes durability).
-4. Health Scan Chip: Provides the same effect as a Health Scanner HUD.
-
-An update to ensure compatibility may follow the DLC release (it is rumored that the developers will add support for C# scripting, and adjustments will be made at that time).
-
-Github：https://github.com/chunhaqiushif/ProtagonistNeverDie
-BA halo patch：https://steamcommunity.com/sharedfiles/filedetails/?id=3845185576
+(Note: this mod is not compatible with the original XML mod.)
